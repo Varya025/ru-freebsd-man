@@ -1,27 +1,27 @@
 .\" Copyright 1997 John-Mark Gurney.  All rights reserved.
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
+.\" Распространение и использование в исходной и двоичной формах, с или без
+.\" изменения разрешены при соблюдении следующих условий
+.\" которые встретились:
+.\" 1. При повторном распространении исходного кода необходимо сохранять вышеуказанные авторские права.
+.\" обратите внимание на этот список условий и следующий отказ от ответственности.
+.\" 2. При распространении в двоичной форме необходимо воспроизводить вышеуказанные авторские права.
+.\" обратите внимание, этот список условий и следующий отказ от ответственности в
+.\" документация и/или другие материалы, прилагаемые к дистрибутиву.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
-.\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-.\" SUCH DAMAGE.
+.» ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЕНО АВТОРОМ И УЧАСТНИКАМИ «КАК ЕСТЬ»
+.» И ЛЮБЫЕ ЯВНЫЕ ИЛИ ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ,
+.» ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ ТОВАРНОЙ ГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ
+.\" ОТКАЗЫВАЮТСЯ. НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ АВТОР ИЛИ УЧАСТНИКИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ
+.» ДЛЯ ЛЮБЫХ ПРЯМЫХ, КОСВЕННЫХ, СЛУЧАЙНЫХ, ОСОБЫХ, ПРИМЕРНЫХ ИЛИ КОСВЕННЫХ
+.» УЩЕРБ (ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ), ПРИОБРЕТЕНИЕ ТОВАРА-ЗАМЕНИТЕЛЯ
+.» ИЛИ УСЛУГ; ПОТЕРЯ ИСПОЛЬЗОВАНИЯ, ДАННЫХ ИЛИ ПРИБЫЛИ; ИЛИ ПРЕРЫВАНИЕ БИЗНЕСА)
+.» ОДНАКО ПРИЧИНЕННАЯ И ПО ЛЮБОЙ ТЕОРИИ ОТВЕТСТВЕННОСТИ, БЫ В ДОГОВОРЕ, СТРОГОЕ
+.» ОТВЕТСТВЕННОСТЬ ИЛИ ПРАВОНАРУШЕНИЕ (ВКЛЮЧАЯ НЕБРЕЖНОСТЬ ИЛИ ДРУГИЕ ОБРАЗЫ), ВОЗНИКАЮЩИЕ ЛЮБЫМ ОБРАЗОМ
+.» ОТКАЗАТЬСЯ ОТ ИСПОЛЬЗОВАНИЯ ЭТОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ, ДАЖЕ ЕСЛИ УВЕДОМЛЕНЫ О ВОЗМОЖНОСТИ
+.\" ТАКОЙ УЩЕРБ.
 .\"
-.Dd March 25, 2014
+.Dd 25 марта 2014 г.
 .Dt BRANDELF 1
 .Os
 .Sh NAME
@@ -36,54 +36,52 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility marks an ELF binary to be run under a certain ABI for
+утилита помечает двоичный файл ELF для запуска под определенным ABI для
 .Fx .
 .Pp
-The options are as follows:
+Возможные варианты:
 .Bl -tag -width indent
 .It Fl f Ar ELF_ABI_number
-Forces branding with the supplied ELF ABI number.
-Incompatible with the
+Обеспечивает брендирование с использованием предоставленного номера ELF ABI.
+Несовместим с
 .Fl t
-option.
-These values are assigned by SCO/USL.
+вариант.
+Эти значения присваиваются SCO/USL.
 .It Fl l
-Writes the list of all known ELF types to the standard error.
+Записывает список всех известных типов ELF в стандартную ошибку.
 .It Fl v
-Turns on verbose output.
+Включает подробный вывод.
 .It Fl t Ar string
-Brands the given ELF binaries to be of the
+Маркирует данные двоичные файлы ELF как
 .Ar string
 ABI type.
-Currently supported ABIs are
+В настоящее время поддерживаются следующие ABI:
 .Dq Li FreeBSD ,
 .Dq Li Linux ,
-and
+и
 .Dq Li SVR4 .
 .It Ar file
-If
+Если
 .Fl t Ar string
-is given it will brand
+дано, это будет клеймо
 .Ar file
-to be of type
+быть типа
 .Ar string ,
-otherwise it will simply display the branding of
+в противном случае он будет просто отображать брендинг
 .Ar file .
 .El
 .Sh EXIT STATUS
-Exit status is 0 on success, and 1 if the command
-fails if a file does not exist, is too short, fails to brand properly,
-or the brand requested is not one of the known types and the
+Статус выхода равен 0 в случае успеха и 1, если команда
+сбой, если файл не существует, слишком короткий, не может быть правильно маркирован,
+или запрошенная марка не входит в число известных типов и
 .Fl f
-option is not set.
+опция не установлена.
 .Sh EXAMPLES
-The following is an example of a typical usage
-of the
+Ниже приведен пример типичного использования.
+принадлежащий
 .Nm
-command:
+команда:
 .Bd -literal -offset indent
-brandelf file
-brandelf -t Linux file
 .Ed
 .Sh SEE ALSO
 .Rs
@@ -95,8 +93,8 @@ brandelf -t Linux file
 .Sh HISTORY
 The
 .Nm
-manual page first appeared in
+Страница руководства впервые появилась в
 .Fx 2.2 .
 .Sh AUTHORS
-This manual page was written by
+Эта страница руководства была написана
 .An John-Mark Gurney Aq Mt jmg@FreeBSD.org .
