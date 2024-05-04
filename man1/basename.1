@@ -1,36 +1,36 @@
 .\" Copyright (c) 1990, 1993, 1994
 .\"	The Regents of the University of California.  All rights reserved.
 .\"
-.\" This code is derived from software contributed to Berkeley by
-.\" the Institute of Electrical and Electronics Engineers, Inc.
+\" Этот код получен из программного обеспечения, предоставленного Беркли
+.» Институт инженеров по электротехнике и электронике, Inc.
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
-.\" 3. Neither the name of the University nor the names of its contributors
-.\"    may be used to endorse or promote products derived from this software
-.\"    without specific prior written permission.
+.\" Распространение и использование в исходной и двоичной формах, с или без
+.\" изменения разрешены при соблюдении следующих условий
+.\" которые встретились:
+.\" 1. При повторном распространении исходного кода необходимо сохранять вышеуказанные авторские права.
+.\" обратите внимание на этот список условий и следующий отказ от ответственности.
+.\" 2. При распространении в двоичной форме необходимо воспроизводить вышеуказанные авторские права.
+.\" обратите внимание, этот список условий и следующий отказ от ответственности в
+.\" документация и/или другие материалы, прилагаемые к дистрибутиву.
+.\" 3. Ни названия университета, ни имен его сотрудников.
+.\" может использоваться для одобрения или продвижения продуктов, созданных на основе этого программного обеспечения.
+.\" без специального предварительного письменного разрешения.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-.\" SUCH DAMAGE.
+.» ЭТО ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ РЕГЕНТАМИ И УЧАСТНИКАМИ «КАК ЕСТЬ» И
+.» ЛЮБЫЕ ЯВНЫЕ ИЛИ ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ,
+.» ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ ТОВАРНОЙ ГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ
+.\" ОТКАЗЫВАЮТСЯ. НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ РЕГЕНТЫ ИЛИ УЧАСТНИКИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ
+.» ДЛЯ ЛЮБЫХ ПРЯМЫХ, КОСВЕННЫХ, СЛУЧАЙНЫХ, ОСОБЫХ, ПРИМЕРНЫХ ИЛИ КОСВЕННЫХ
+.» УЩЕРБ (ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ), ПРИОБРЕТЕНИЕ ТОВАРА-ЗАМЕНИТЕЛЯ
+.» ИЛИ УСЛУГ; ПОТЕРЯ ИСПОЛЬЗОВАНИЯ, ДАННЫХ ИЛИ ПРИБЫЛИ; ИЛИ ПРЕРЫВАНИЕ БИЗНЕСА)
+.» ОДНАКО ПРИЧИНЕННАЯ И ПО ЛЮБОЙ ТЕОРИИ ОТВЕТСТВЕННОСТИ, БЫ В ДОГОВОРЕ, СТРОГОЕ
+.» ОТВЕТСТВЕННОСТЬ ИЛИ ПРАВОНАРУШЕНИЕ (ВКЛЮЧАЯ НЕБРЕЖНОСТЬ ИЛИ ДРУГИЕ ОБРАЗЫ), ВОЗНИКАЮЩИЕ ЛЮБЫМ ОБРАЗОМ
+.» ОТКАЗАТЬСЯ ОТ ИСПОЛЬЗОВАНИЯ ЭТОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ, ДАЖЕ ЕСЛИ УВЕДОМЛЕНЫ О ВОЗМОЖНОСТИ
+.\" ТАКОЙ УЩЕРБ.
 .\"
 .\"     @(#)basename.1	8.2 (Berkeley) 4/18/94
 .\"
-.Dd June 21, 2021
+.Dd 21 июня 2021 г.
 .Dt BASENAME 1
 .Os
 .Sh NAME
@@ -51,47 +51,45 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility deletes any prefix ending with the last slash
+утилита удаляет любой префикс, заканчивающийся последней косой чертой
 .Ql \&/
-character present in
+персонаж присутствует в
 .Ar string
-(after first stripping trailing slashes),
-and a
+(после первого удаления косых черт),
+и
 .Ar suffix ,
-if given.
-The
+если дано.
 .Ar suffix
-is not stripped if it is identical to the remaining characters in
+не удаляется, если он идентичен остальным символам в
 .Ar string .
-The resulting filename is written to the standard output.
-A non-existent suffix is ignored.
-If
+Полученное имя файла записывается в стандартный вывод.
+Несуществующий суффикс игнорируется.
+Если
 .Fl a
-is specified, then every argument is treated as a
+указан, то каждый аргумент рассматривается как
 .Ar string
-as if
+будто
 .Nm
-were invoked with just one argument.
-If
+были вызваны только с одним аргументом.
+Если
 .Fl s
-is specified, then the
+указано, то
 .Ar suffix
-is taken as its argument, and all other arguments are treated as a
+принимается в качестве аргумента, а все остальные аргументы рассматриваются как
 .Ar string .
 .Pp
-The
 .Nm dirname
-utility deletes the filename portion, beginning
-with the last slash
+утилита удаляет часть имени файла, начиная
+с последней чертой
 .Ql \&/
-character to the end of
+персонаж до конца
 .Ar string
-(after first stripping trailing slashes),
-and writes the result to the standard output.
+(после первого удаления косых черт),
+и записывает результат в стандартный вывод.
 .Sh EXIT STATUS
 .Ex -std basename dirname
 .Sh EXAMPLES
-The following line sets the shell variable
+Следующая строка устанавливает переменную оболочки
 .Ev FOO
 to
 .Pa /usr/bin .
@@ -105,17 +103,17 @@ to
 .Sh STANDARDS
 The
 .Nm
-and
+и
 .Nm dirname
-utilities are expected to be
+коммунальные услуги, как ожидается, будут
 .St -p1003.2
-compatible.
+совместимы.
 .Sh HISTORY
 The
 .Nm
-utility first appeared in
+утилита впервые появилась в
 .At v7 .
 The
 .Nm dirname
-utility first appeared in
+утилита впервые появилась в
 .At III .
