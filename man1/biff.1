@@ -1,33 +1,33 @@
 .\" Copyright (c) 1980, 1990, 1993
 .\"	The Regents of the University of California.  All rights reserved.
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
-.\" 3. Neither the name of the University nor the names of its contributors
-.\"    may be used to endorse or promote products derived from this software
-.\"    without specific prior written permission.
+.\" Распространение и использование в исходной и двоичной формах, с или без
+.\" изменения разрешены при соблюдении следующих условий
+.\" которые встретились:
+.\" 1. При повторном распространении исходного кода необходимо сохранять вышеуказанные авторские права.
+.\" обратите внимание на этот список условий и следующий отказ от ответственности.
+.\" 2. При распространении в двоичной форме необходимо воспроизводить вышеуказанные авторские права.
+.\" обратите внимание, этот список условий и следующий отказ от ответственности в
+.\" документация и/или другие материалы, прилагаемые к дистрибутиву.
+.\" 3. Ни названия университета, ни имен его сотрудников.
+.\" может использоваться для одобрения или продвижения продуктов, созданных на основе этого программного обеспечения.
+.\" без специального предварительного письменного разрешения.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
-.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-.\" SUCH DAMAGE.
+.» ЭТО ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ РЕГЕНТАМИ И УЧАСТНИКАМИ «КАК ЕСТЬ» И
+.» ЛЮБЫЕ ЯВНЫЕ ИЛИ ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ,
+.» ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ ТОВАРНОЙ ГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ
+.\" ОТКАЗЫВАЮТСЯ. НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ РЕГЕНТЫ ИЛИ УЧАСТНИКИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ
+.» ДЛЯ ЛЮБЫХ ПРЯМЫХ, КОСВЕННЫХ, СЛУЧАЙНЫХ, ОСОБЫХ, ПРИМЕРНЫХ ИЛИ КОСВЕННЫХ
+.» УЩЕРБ (ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ), ПРИОБРЕТЕНИЕ ТОВАРА-ЗАМЕНИТЕЛЯ
+.» ИЛИ УСЛУГ; ПОТЕРЯ ИСПОЛЬЗОВАНИЯ, ДАННЫХ ИЛИ ПРИБЫЛИ; ИЛИ ПРЕРЫВАНИЕ БИЗНЕСА)
+.» ОДНАКО ПРИЧИНЕННАЯ И ПО ЛЮБОЙ ТЕОРИИ ОТВЕТСТВЕННОСТИ, БЫ В ДОГОВОРЕ, СТРОГОЕ
+.» ОТВЕТСТВЕННОСТЬ ИЛИ ПРАВОНАРУШЕНИЕ (ВКЛЮЧАЯ НЕБРЕЖНОСТЬ ИЛИ ДРУГИЕ ОБРАЗЫ), ВОЗНИКАЮЩИЕ ЛЮБЫМ ОБРАЗОМ
+.» ОТКАЗАТЬСЯ ОТ ИСПОЛЬЗОВАНИЯ ЭТОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ, ДАЖЕ ЕСЛИ УВЕДОМЛЕНЫ О ВОЗМОЖНОСТИ
+.\" ТАКОЙ УЩЕРБ.
 .\"
 .\"     @(#)biff.1	8.1 (Berkeley) 6/6/93
 .\"
-.Dd April 28, 2013
+.Dd 28 апреля 2013 г.
 .Dt BIFF 1
 .Os
 .Sh NAME
@@ -39,75 +39,75 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility informs the system whether you want to be notified on your terminal
-when mail arrives.
+утилита сообщает системе, хотите ли вы получать уведомления на своем терминале
+когда придет почта.
 .Pp
-Affected is the first terminal associated with the standard input,
-standard output or standard error file descriptor, in that order.
-Thus, it is possible to use the redirection facilities of a shell to
-toggle the notification for other terminals than the one
+Затрагивается первый терминал, связанный со стандартным вводом,
+стандартный вывод или стандартный дескриптор файла ошибок, именно в этом порядке.
+Таким образом, можно использовать средства перенаправления оболочки для
+переключить уведомление для других терминалов, кроме этого
 .Nm
-runs on.
+идем дальше
 .Pp
-The following options are available:
+Доступны следующие варианты:
 .Bl -tag -width indent
 .It Cm n
-Disable notification.
+Отключить уведомление.
 .It Cm y
-Enable header notification.
+Включить уведомление в заголовке.
 .It Cm b
-Enable bell notification.
+Включить уведомление о звонке.
 .El
 .Pp
-When header notification is enabled, the header and first few lines of
-the message will be printed on your terminal whenever mail arrives.
+Когда уведомление заголовка включено, заголовок и первые несколько строк
+сообщение будет распечатано на вашем терминале всякий раз, когда придет почта.
 A
 .Dq "biff y"
-command is often included in the file
+команда часто включается в файл
 .Pa .login
-or
+или
 .Pa .profile
-to be executed at each login.
+выполняться при каждом входе в систему.
 .Pp
-When bell notification is enabled, only two bell characters
+Когда уведомление о звонке включено, только два символа звонка
 .Tn ( ASCII
 \\007)
-will be printed on your terminal whenever mail arrives.
+будет распечатан на вашем терминале при каждом поступлении почты.
 .Pp
-If no arguments are given,
+Если аргументы не указаны,
 .Nm
-displays the present notification status of the terminal to the
-standard output.
+отображает текущий статус уведомления терминала на
+стандартный вывод.
 .Pp
 The
 .Nm
-utility operates asynchronously.
-For synchronous notification use the
+Утилита работает асинхронно.
+Для синхронного уведомления используйте
 .Ev MAIL
-variable of
+переменная
 .Xr sh 1
-or the
+или
 .Va mail
-variable of
+переменная
 .Xr csh 1 .
 .Sh EXIT STATUS
 The
 .Nm
-utility exits with one of the following values:
+Утилита завершает работу с одним из следующих значений:
 .Bl -tag -width indent
 .It 0
-Notification was enabled at the time of invocation.
+Уведомление было включено во время вызова.
 .It 1
-Notification was disabled at the time of invocation.
+Уведомление было отключено на момент вызова.
 .It >1
-An error occurred.
+Произошла ошибка.
 .El
 .Sh COMPATIBILITY
-Previous versions of the
+Предыдущие версии
 .Nm
-utility affected the terminal attached to standard error without first
-trying the standard input or output devices.
-.Sh SEE ALSO
+утилита повлияла на терминал, подключенный к стандартной ошибке, без предварительного
+пробуем стандартные устройства ввода или вывода.
+.Sh SСМОТРИТЕ ТАКЖЕ
 .Xr csh 1 ,
 .Xr mail 1 ,
 .Xr sh 1 ,
@@ -115,8 +115,8 @@ trying the standard input or output devices.
 .Sh HISTORY
 The
 .Nm
-command appeared in
+команда появилась в
 .Bx 4.0 .
-It was named after the dog of Heidi Stettner.
-He died
-in August 1993, at 15.
+Он был назван в честь собаки Хайди Стеттнер.
+Он умер
+в августе 1993 года, в 15.
