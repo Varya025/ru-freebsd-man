@@ -1,27 +1,27 @@
 .\"-
 .\" Copyright (c) 2021 Hans Petter Selasky <hselasky@FreeBSD.org>
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
+.\" Распространение и использование в исходной и двоичной формах, с или без
+.\" изменения разрешены при соблюдении следующих условий
+.\" которые встретились:
+.\" 1. При повторном распространении исходного кода необходимо сохранять вышеуказанные авторские права.
+.\" обратите внимание на этот список условий и следующий отказ от ответственности.
+.\" 2. При распространении в двоичной форме необходимо воспроизводить вышеуказанные авторские права.
+.\" обратите внимание, этот список условий и следующий отказ от ответственности в
+.\" документация и/или другие материалы, прилагаемые к дистрибутиву.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.» ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЕНО АВТОРОМ «КАК ЕСТЬ» И ЛЮБЫМИ ЯВНЫМИ ИЛИ
+.» ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ, ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ
+.» ТОВАРНОЙ ПРИГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ ОТКАЗЫВАЮТСЯ.
+АВТОР НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ ЗА ЛЮБЫЕ ПРЯМЫЕ, КОСВЕННЫЕ,
+.» СЛУЧАЙНЫЕ, ОСОБЫЕ, ПРИМЕРНЫЕ ИЛИ КОСВЕННЫЕ УБЫТКИ (ВКЛЮЧАЯ, НО
+.» НЕ ОГРАНИЧИВАЯСЬ ЗАКУПКОЙ ТОВАРОВ-ЗАМЕНИТЕЛЕЙ ИЛИ УСЛУГ; ПОТЕРИ ИСПОЛЬЗОВАНИЯ,
+.» ДАННЫЕ, ИЛИ ПРИБЫЛЬ, ИЛИ ПЕРЕРЫВ БИЗНЕСА), КАКИЕ бы причины ни были вызваны, И НА ЛЮБОМ
+.» ТЕОРИЯ ОТВЕТСТВЕННОСТИ, КАК ДОГОВОР, СТРОГО ОТВЕТСТВЕННОСТЬ ИЛИ ДЕЛИК
+.» (ВКЛЮЧАЯ НЕБРЕЖНОСТЬ ИЛИ ДРУГОЕ), ВОЗНИКАЮЩИЕ ЛЮБЫМ СПОСОБОМ ПРИ ИСПОЛЬЗОВАНИИ
+.» ДАННОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ, ДАЖЕ ЕСЛИ ПРЕДУПРЕЖДЕНО О ВОЗМОЖНОСТИ ТАКОГО ПОВРЕЖДЕНИЯ.
 .\"
-.Dd November 4, 2021
+.Dd 4 ноября 2021 г.
 .Dt beep 1
 .Os
 .Sh NAME
@@ -39,44 +39,44 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility is used to playback a beep on the soundcard.
+Утилита используется для воспроизведения звукового сигнала на звуковой карте.
 .Pp
-The options are as follows:
+Возможные варианты:
 .Bl -tag -width "-f device"
 .It Fl F
-Sets the center frequency of the beep in Hz.
-The default is 440 Hz .
+Устанавливает центральную частоту звукового сигнала в Гц.
+По умолчанию — 440 Гц.
 .It Fl D
-Sets the duration of the beep in milliseconds.
-The default is 150 ms .
+Устанавливает длительность звукового сигнала в миллисекундах.
+Значение по умолчанию — 150 мс.
 .It Fl d
-Sets the soundcard to use.
-The default is /dev/dsp .
+Устанавливает звуковую карту для использования.
+По умолчанию используется /dev/dsp.
 .It Fl r
-Sets the soundcard samplerate in Hz.
-The default is 48000 Hz.
+Устанавливает частоту дискретизации звуковой карты в Гц.
+По умолчанию — 48000 Гц.
 .It Fl g
-Sets the waveform gain, between 0 and 100 inclusively.
-The default is 75.
+Устанавливает усиление сигнала от 0 до 100 включительно.
+По умолчанию — 75.
 .It Fl B
-Runs the
+Запускает
 .Nm
-utility in the background.
+утилита в фоновом режиме.
 .It Fl h
-Display summary of options.
+Отобразить сводку опций.
 .El
 .Sh EXAMPLES
 .Pp
-Playback default beep sound using /dev/dsp .
+Воспроизведение звукового сигнала по умолчанию с помощью /dev/dsp .
 .Bl -tag -width Ds -offset indent
 .It $ beep
 .El
-.Sh SEE ALSO
+.Sh СМОТРИТЕ ТАКЖЕ
 .Xr mixer 3 ,
 .Xr sound 4 ,
 .Sh HISTORY
 The
 .Nm
-utility first appeared in FreeBSD 14.0.
+Утилита впервые появилась во FreeBSD 14.0.
 .Sh AUTHORS
 .An Hans Petter Selasky Aq Mt hselasky@FreeBSD.org
