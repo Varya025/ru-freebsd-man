@@ -3,32 +3,32 @@
 .\" Copyright (c) 1993 Winning Strategies, Inc.
 .\" All rights reserved.
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
-.\" 3. All advertising materials mentioning features or use of this software
-.\"    must display the following acknowledgement:
-.\"      This product includes software developed by Winning Strategies, Inc.
-.\" 4. The name of the author may not be used to endorse or promote products
-.\"    derived from this software without specific prior written permission
+.\" Распространение и использование в исходной и двоичной формах, с или без
+.\" изменения разрешены при соблюдении следующих условий
+.\" которые встретились:
+.\" 1. При повторном распространении исходного кода необходимо сохранять вышеуказанные авторские права.
+.\" обратите внимание на этот список условий и следующий отказ от ответственности.
+.\" 2. При распространении в двоичной форме необходимо воспроизводить вышеуказанные авторские права.
+.\" обратите внимание, этот список условий и следующий отказ от ответственности в
+.\" документация и/или другие материалы, прилагаемые к дистрибутиву.
+.\" 3. Все рекламные материалы, в которых упоминаются функции или использование данного программного обеспечения.
+.\" должно отображать следующее подтверждение:
+.\" Этот продукт включает программное обеспечение, разработанное Winning Strategies, Inc.
+.\" 4. Имя автора не может быть использовано для одобрения или продвижения продуктов.
+.\" получено из этого программного обеспечения без специального предварительного письменного разрешения.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.» ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЕНО АВТОРОМ «КАК ЕСТЬ» И ЛЮБЫМИ ЯВНЫМИ ИЛИ
+.» ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ, ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ
+.» ТОВАРНОЙ ПРИГОДНОСТИ И ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ ОТКАЗЫВАЮТСЯ.
+АВТОР НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ ЗА ЛЮБЫЕ ПРЯМЫЕ, КОСВЕННЫЕ,
+.» СЛУЧАЙНЫЕ, ОСОБЫЕ, ПРИМЕРНЫЕ ИЛИ КОСВЕННЫЕ УБЫТКИ (ВКЛЮЧАЯ, НО
+.» НЕ ОГРАНИЧИВАЯСЬ ЗАКУПКОЙ ТОВАРОВ-ЗАМЕНИТЕЛЕЙ ИЛИ УСЛУГ; ПОТЕРИ ИСПОЛЬЗОВАНИЯ,
+.» ДАННЫЕ, ИЛИ ПРИБЫЛЬ, ИЛИ ПЕРЕРЫВ БИЗНЕСА), КАКИЕ бы причины ни были вызваны, И НА ЛЮБОМ
+.» ТЕОРИЯ ОТВЕТСТВЕННОСТИ, КАК ДОГОВОР, СТРОГО ОТВЕТСТВЕННОСТЬ ИЛИ ДЕЛИК
+.» (ВКЛЮЧАЯ НЕБРЕЖНОСТЬ ИЛИ ДРУГОЕ), ВОЗНИКАЮЩИЕ ЛЮБЫМ СПОСОБОМ ПРИ ИСПОЛЬЗОВАНИИ
+.» ДАННОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ, ДАЖЕ ЕСЛИ ПРЕДУПРЕЖДЕНО О ВОЗМОЖНОСТИ ТАКОГО ПОВРЕЖДЕНИЯ.
 .\"
-.Dd May 9, 2002
+.Dd 9 мая 2002 г.
 .Dt ASA 1
 .Os
 .Sh NAME
@@ -40,48 +40,48 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility reads files sequentially, mapping
+утилита читает файлы последовательно, сопоставляя
 .Tn FORTRAN
-carriage-control characters to line-printer control sequences,
-and writes them to the standard output.
+символы управления кареткой в управляющие последовательности линейного принтера,
+и записывает их в стандартный вывод.
 .Pp
-The first character of each line is interpreted as a carriage-control
-character.
-The following characters are interpreted as follows:
+Первый символ каждой строки интерпретируется как элемент управления кареткой.
+характер.
+Следующие символы интерпретируются следующим образом:
 .Bl -tag -width ".Aq space"
 .It Aq space
-Output the rest of the line without change.
+Выведите остальную часть строки без изменений.
 .It 0
-Output a
+Выведите
 .Aq newline
-character before printing the rest of the line.
-.It 1
-Output a
-.Aq formfeed
-character before printing the rest of the line.
-.It \&+
-The trailing
-.Aq newline
-of the previous line is replaced by a
-.Aq carriage-return
-before printing the rest of the line.
-.El
+ символ перед печатью остальной части строки.
+ .It 1
+ Выведите
+ .Aq formfeed
+ символ перед печатью остальной части строки.
+ .It \&+
+ Замыкающий
+ .Aq newline
+ предыдущей строки заменяется на
+ .Aq carriage-return
+ перед печатью остальной части строки.
+ .El
 .Pp
-Lines beginning with characters other than the above are treated as if they
-begin with
+Строки, начинающиеся с символов, отличных от указанных выше, обрабатываются так, как будто они
+Начать с
 .Aq space .
 .Sh EXIT STATUS
 .Ex -std
 .Sh EXAMPLES
-To view a file containing the output of a
+Чтобы просмотреть файл, содержащий выходные данные
 .Tn FORTRAN
-program:
+программа:
 .Pp
 .Dl "asa file"
 .Pp
-To format the output of a
+Чтобы отформатировать вывод
 .Tn FORTRAN
-program and redirect it to a line-printer:
+программу и перенаправьте ее на построчный принтер:
 .Pp
 .Dl "a.out | asa | lpr"
 .Sh SEE ALSO
@@ -89,7 +89,7 @@ program and redirect it to a line-printer:
 .Sh STANDARDS
 The
 .Nm
-utility conforms to
+полезность соответствует
 .St -p1003.1-2001 .
 .Sh AUTHORS
 .An J.T. Conklin ,
